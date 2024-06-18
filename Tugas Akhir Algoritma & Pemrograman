@@ -1,6 +1,61 @@
 #include <stdio.h>
+#include<string.h>
 int main(){
     printf("Panduan Tugas Akhir Algoritma & Pemrograman");
 }
 // Nama : Geovano Avrio Donza
 // Nim  : 12250511322
+float balance = 100000;
+int anotherTransaction;
+
+
+void transaction(){
+	int choice;
+	printf("Enter any option to be served1\n\n");
+	printf("1. Withdraw\n");
+	printf("2. Deposit\n");
+	printf("3. Balance\n");
+	scanf("%d", &choice);
+	
+	switch(choice){
+		case 1:
+		int amountTowithdraw;
+		printf("Please enter amount to withdraw: ");
+		scanf("%d", &amountTowithdraw);
+		if(amountTowithdraw > balance){
+			printf("There is no insuffient funds in your account");
+			printf("\n\nDo you want another transaction?\nPress 1 to proceed and press 2 to exit\n");
+			scanf("%d", &anotherTransaction);
+			if(anotherTransaction == 1){
+				transaction();
+	}
+} else {
+	balance = balance - amountTowithdraw;
+	printf("You have withdraw %d and your new balance is %f ", amountTowithdraw, balance);
+	printf("\n\nDo you want another transaction?\nPress 1 to proceed and press 2 to exit\n");
+			scanf("%d", &anotherTransaction);
+			if(anotherTransaction == 1){
+				transaction();
+	}
+}
+		break;
+		case 2:
+		int amountToDeposit;
+		printf("Please enter amount to deposit: ");
+		scanf("%d", &amountToDeposit);
+		
+		balance = amountToDeposit + balance;
+		printf("Thank you for depositing, new balance is : %f", balance );
+		break;
+		
+		case 3:
+		printf("your bank balance is : %f", balance);
+		
+		break;
+	}
+}
+
+int main(){
+	transaction();
+	return 0;
+}
