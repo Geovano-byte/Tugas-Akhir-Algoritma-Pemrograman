@@ -1,0 +1,6 @@
+#include <stdio.h>
+int main(){
+    printf("Panduan Tugas Akhir Algoritma & Pemrograman");
+}
+// Nama : Geovano Avrio Donza
+// Nim  : 12250511322
